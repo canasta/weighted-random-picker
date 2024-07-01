@@ -34,8 +34,8 @@ function pick() {
             document.getElementById("res-div").innerText = "Error: "+line;
             return;
         }
-        inparr.push([l[0],sum, sum+l[1]]);
-        sum += l[1];
+        inparr.push([l[0],sum, sum+Number(l[1])]);
+        sum += Number(l[1]);
     })
     
     let picked = Math.floor(Math.random() * sum);
@@ -57,7 +57,6 @@ function reset() {
 }
 
 function resizeTextarea(evt) {
-    console.log(evt.target);
     evt.target.style.height = 'auto';
     evt.target.style.height = evt.target.scrollHeight+'px';
 }
