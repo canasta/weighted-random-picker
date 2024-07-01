@@ -1,0 +1,50 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>랜덤 추첨기</title>
+        <meta property="og:title" content="랜덤 추첨기">
+        <meta property="og:description" content="목록에서 당첨자를 뽑아줍니다!">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="랜덤 추첨기">
+        <meta name="twitter:description" content="목록에서 당첨자를 뽑아줍니다!">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body style="overflow: auto;">
+        <h1>랜덤 추첨기</h1>
+        <div id="body-wrap">
+            <div id="container">
+                </br>
+                <div id="inp-div">
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="selectTab(event, 'tab-text');">□</button>
+                        <button class="tab-btn" onclick="selectTab(event, 'tab-form');">□□</button>
+                    </div>
+
+                    <div id="tab-text" class="tab-content current">
+                        <textarea id="ta-input" cols="30" placeholder="이름 1&#10;이름 1" onchange="resizeTextarea(event);"></textarea>
+                    </div>
+                    <div id="tab-form" class="tab-content">
+                        <div>
+                            <input type="text" placeholder="이름">
+                            <input type="number" placeholder="1">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="이름">
+                            <input type="number" placeholder="1">
+                        </div>
+                    </div>
+                    <button id="btn-pick" onclick="pick();">추첨</button>
+                    <button id="btn-reset" onclick="reset();">초기화</button>
+                </div>
+                </br>
+                <p>결과</p>
+                <div id="res-div">
+
+                </div>
+            </div>
+            <footer></br></footer>
+        </div>
+        <script src="./picker.js"></script>
+    </body>
+</html>
