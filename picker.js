@@ -18,11 +18,12 @@ function selectTab(evt, tabName) {
 function pick() {
     var inparr = [];
     let sum = 0;
+    let is_remove_picked = document.getElementById("remove-picked").checked;
 
     let inplines = document.getElementById("ta-input").value.split("\n");
     if(inplines[inplines.length-1]=="") inplines.pop();
     if(inplines.length==1) {
-        document.getElementById("ta-input").value = "";
+        if(is_remove_picked) document.getElementById("ta-input").value = "";
         document.getElementById("res-div").innerText = inplines[0].split(" ")[0]+"\n"+document.getElementById("res-div").innerText;
         return;
     }
@@ -41,8 +42,10 @@ function pick() {
     while(sum>0 && picked==sum) picked = Math.floor(Math.random() * sum);
     for(let i=0; i<inparr.length; i++){
         if(inparr[i][1]<=picked && inparr[i][2]>picked){
-            inplines.splice(i, 1);
-            document.getElementById("ta-input").value = inplines.join("\n");
+            if(is_remove_picked) {
+                inplines.splice(i, 1);
+                document.getElementById("ta-input").value = inplines.join("\n");
+            }
             document.getElementById("res-div").innerText = inparr[i][0]+"\n"+document.getElementById("res-div").innerText;
             return;
         }

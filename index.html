@@ -14,7 +14,8 @@
         <h1>랜덤 추첨기</h1>
         <div id="body-wrap">
             <div id="container">
-                </br>
+                <p>[이름 가중치]순으로 입력하면 랜덤하게 추첨해서 뽑아줍니다.</p>
+                <h3>추첨 목록</h3>
                 <div id="inp-div">
                     <div class="tabs">
                         <button class="tab-btn active" onclick="selectTab(event, 'tab-text');">□</button>
@@ -22,7 +23,7 @@
                     </div>
 
                     <div id="tab-text" class="tab-content current">
-                        <textarea id="ta-input" cols="30" placeholder="이름 1&#10;이름 1" onchange="resizeTextarea(event);"></textarea>
+                        <textarea id="ta-input" cols="40" rows="5" placeholder="김씨 3&#10;이씨 2&#10;박씨 10" onchange="resizeTextarea(event);"></textarea>
                     </div>
                     <div id="tab-form" class="tab-content">
                         <div>
@@ -34,11 +35,13 @@
                             <input type="number" placeholder="1">
                         </div>
                     </div>
-                    <button id="btn-pick" onclick="pick();">추첨</button>
-                    <button id="btn-reset" onclick="reset();">초기화</button>
+                    <button id="btn-pick" onclick="pick();">뽑기</button>
+                    <button id="btn-reset" onclick="reset();">초기화</button></br>
+                    <input type="checkbox" id="remove-picked" name="remove-picked" checked/>
+                    <label for="remove-picked">당첨자를 목록에서 제외</label>
                 </div>
                 </br>
-                <p>결과</p>
+                <h3>결과</h3>
                 <div id="res-div">
 
                 </div>

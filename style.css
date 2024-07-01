@@ -27,6 +27,13 @@ div{
     text-align: center;
 }
 
+#inp-div button{
+    font-size: 16px;
+}
+#inp-div label{
+    font-size: 12px;
+}
+
 .tabs button{
     background-color: #ddd;
     border: none;
